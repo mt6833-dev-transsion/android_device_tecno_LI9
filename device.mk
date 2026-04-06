@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-KERNEL_PATH := device/tecno/LH8n-kernel
+KERNEL_PATH := device/tecno/LI9-kernel
 
 # Dalvik VM Configuration
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
@@ -15,7 +15,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, vendor/mediatek/ims/ims.mk)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/tecno/LH8n/lh8n-vendor.mk)
+$(call inherit-product, vendor/tecno/LI9/LI9-vendor.mk)
 
 ## Inherit from GKI stuffs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
@@ -189,32 +189,16 @@ PRODUCT_COPY_FILES += \
         $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc) \
         $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
 
-# NFC
-PRODUCT_PACKAGES += \
-    android.hardware.nfc-service.st \
-    com.android.nfc_extras \
-    Tag
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
-
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc,$(TARGET_COPY_OUT_VENDOR)/etc)
-	
 # Overlays
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay_LH8n \
-    FrameworksResOverlay_LH8n \
-    SettingsResOverlay_LH8n \
-	NfcResOverlay_LH8n \
-    SystemUIOverlay_LH8n \
-	Launcher3DeviceOverlay_LH8n \
-    TetheringResOverlay_LH8n \
-    WifiResOverlay_LH8n
+    CarrierConfigOverlay_LI9 \
+    FrameworksResOverlay_LI9 \
+    SettingsResOverlay_LI9 \
+	NfcResOverlay_LI9 \
+    SystemUIOverlay_LI9 \
+	Launcher3DeviceOverlay_LI9 \
+    TetheringResOverlay_LI9 \
+    WifiResOverlay_LI9
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay

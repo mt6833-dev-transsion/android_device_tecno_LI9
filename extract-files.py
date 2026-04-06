@@ -119,7 +119,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'LH8n',
+    'LI9',
     'tecno',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

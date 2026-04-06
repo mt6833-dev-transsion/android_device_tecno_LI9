@@ -1,4 +1,4 @@
-# Device tree for the TECNO POVA 5 Pro (LH8n)
+# Device tree for the TECNO POVA 6 Pro (LI9)
 
 ## Device specifications
 

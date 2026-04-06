@@ -3,21 +3,24 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/tecno/LH8n
-KERNEL_PATH := device/tecno/LH8n-kernel
+DEVICE_PATH := device/tecno/LI9
+KERNEL_PATH := device/tecno/LI9-kernel
 
 # A/B
 AB_OTA_PARTITIONS += \
     boot \
-    system \
-    system_ext \
+    odm_dlkm \
     product \
-    vendor \
-    vendor_boot \
+    system \
+	system_dlkm \
+    system_ext \
     vbmeta \
     vbmeta_system \
-    vbmeta_vendor
-
+    vbmeta_vendor \
+    vendor \
+    vendor_boot \
+    vendor_dlkm
+	
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
@@ -31,7 +34,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := LH8n
+TARGET_OTA_ASSERT_DEVICE := LI9
 
 # Boot Image
 BOARD_BOOT_HEADER_VERSION := 4
@@ -43,12 +46,12 @@ BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_BASE := 0x40078000
-BOARD_KERNEL_OFFSET := 0x00008000
-BOARD_RAMDISK_OFFSET := 0x11088000
-BOARD_KERNEL_TAGS_OFFSET := 0x07c08000
-BOARD_DTB_OFFSET := 0x07c08000
-BOARD_DTB_SIZE := 161454
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_OFFSET := 0x40080000
+BOARD_RAMDISK_OFFSET := 0x51100000
+BOARD_KERNEL_TAGS_OFFSET := 0x47c80000
+BOARD_DTB_OFFSET := 0x47c80000
+BOARD_DTB_SIZE := 193715
 
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
@@ -57,7 +60,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := LH8n
+TARGET_BOOTLOADER_BOARD_NAME := LI9
 TARGET_NO_BOOTLOADER := true
 
 # Display
@@ -213,4 +216,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # Inherit the proprietary files
-include vendor/tecno/LH8n/BoardConfigVendor.mk
+include vendor/tecno/LI9/BoardConfigVendor.mk
