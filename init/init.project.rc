@@ -41,7 +41,7 @@ on post-fs-data
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
-    # BSP:modify for LRA ADYLHBSLA-1 by jiangzhu.yang 20220715 start
+    #USD: add by longtao.ran for vib bringup 20250424 start
     chown system system /sys/class/leds/vibrator_single/activate
     chown system system /sys/class/leds/vibrator_single/activate_mode
     chown system system /sys/class/leds/vibrator_single/awrw
@@ -78,7 +78,12 @@ on post-fs-data
     chown system system /sys/class/leds/vibrator_single/trigger
     chown system system /sys/class/leds/vibrator_single/uevent
     chown system system /sys/class/leds/vibrator_single/vbat_monitor
-    # BSP:modify for LRA ADYLHBSLA-1 by jiangzhu.yang 20220715 end
+    #USD: add by longtao.ran for vib bringup 20250424 end
+#USD: modify AR-DE-0001-001-022 for li9 sensor bring up by hao.zheng 20250421 start
+    chmod 0666 /dev/lirc0
+    chown system system /dev/lirc0
+#USD: modify AR-DE-0001-001-022 for li9 sensor bring up by hao.zheng 20250421 end
+
 
 on init
     # Refer to http://source.android.com/devices/tech/storage/index.html
@@ -106,12 +111,8 @@ on property:sys.boot_completed=1
     chmod 0660 /dev/drm_wv
     chown media system /dev/drm_wv
 
-#SPD: modify cpuctl cpu.shares by yifei.liu at 20240327 start
-    write /dev/cpuctl/top-app/cpu.shares 5120
-    write /dev/cpuctl/foreground/cpu.shares 4196
-#SPD: modify cpuctl cpu.shares by yifei.liu at 20240327 end
-
-#BSP: add memfusion2.2 for LH7NUH89-10 by zenghui.li 20240322 start
+#USD: add for Memfusion2_2 by dongyun.liu 20240926 start
 on property:sys.boot_completed=1 && property:persist.vendor.swapfile_enable=true && property:ro.vendor.memfusion2_2.support=true
     swapon_all /vendor/etc/memfusion2/fstab.enableswap_wb
-#BSP: add memfusion2.2 for LH7NUH89-10 by zenghui.li 20240322 end
+#USD: add for Memfusion2_2 by dongyun.liu 20240926 end
+
