@@ -79,22 +79,17 @@ Only the three quirks included above are recognized at this point:
 <MediaCodecs>
     <Encoders>
         <!-- MTK codec -->
-        <MediaCodec name="c2.mtk.mpeg4.encoder" type="video/mp4v-es" update="true">
-            <Limit name="measured-frame-rate-176x144" range="156-343" />
-        </MediaCodec>
-        <MediaCodec name="c2.mtk.h263.encoder" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="79-174" />
-        </MediaCodec>
         <MediaCodec name="c2.mtk.avc.encoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="468-1030" />
-            <Limit name="measured-frame-rate-720x480" range="142-312" />
-            <Limit name="measured-frame-rate-1280x720" range="64-141" />
-            <Limit name="measured-frame-rate-1920x1080" range="30-66" />
+            <Limit name="measured-frame-rate-320x240" range="290-639" />
+            <Limit name="measured-frame-rate-720x480" range="95-209" />
+            <Limit name="measured-frame-rate-1280x720" range="33-74" />
+            <Limit name="measured-frame-rate-1920x1080" range="22-49" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.hevc.encoder" type="video/hevc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="310-681" />
-            <Limit name="measured-frame-rate-3840x2160" range="13-29" />
-            <Limit name="measured-frame-rate-1280x720" range="50-109" />
+            <Limit name="measured-frame-rate-320x240" range="282-620" />
+            <Limit name="measured-frame-rate-720x480" range="100-221" />
+            <Limit name="measured-frame-rate-1280x720" range="34-76" />
+            <Limit name="measured-frame-rate-1920x1080" range="23-50" />
         </MediaCodec>
         <!-- Google codec -->
         <MediaCodec name="c2.android.avc.encoder" type="video/avc" update="true">
@@ -107,7 +102,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="measured-frame-rate-176x144" range="275-605" />
         </MediaCodec>
         <MediaCodec name="c2.android.hevc.encoder" type="video/hevc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="13-28" />
+            <Limit name="measured-frame-rate-320x240" range="13-56" />
         </MediaCodec>
         <MediaCodec name="c2.android.mpeg4.encoder" type="video/mp4v-es" update="true">
             <Limit name="measured-frame-rate-176x144" range="263-579" />
@@ -118,32 +113,43 @@ Only the three quirks included above are recognized at this point:
             <Limit name="measured-frame-rate-1280x720" range="13-29" />
             <Limit name="measured-frame-rate-1920x1080" range="9-20" />
         </MediaCodec>
+        <MediaCodec name="c2.android.av1.encoder" type="video/av01" update="true">
+            <Limit name="measured-frame-rate-320x240" range="37-83" />
+            <Limit name="measured-frame-rate-720x480" range="40-89" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.vp9.encoder" type="video/x-vnd.on2.vp9" update="true">
+            <Limit name="measured-frame-rate-320x180" range="158-281" />
+            <Limit name="measured-frame-rate-640x360" range="56-66" />
+            <Limit name="measured-frame-rate-1280x720" range="23-23" />
+        </MediaCodec>
     </Encoders>
     <Decoders>
         <!-- MTK codec -->
         <MediaCodec name="c2.mtk.mpeg4.decoder" type="video/mp4v-es" update="true">
-            <Limit name="measured-frame-rate-176x144" range="807-1775" />
+            <Limit name="measured-frame-rate-176x144" range="300-661" />
             <Limit name="measured-frame-rate-480x360" range="346-762" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.h263.decoder" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="800-1761" />
-            <Limit name="measured-frame-rate-352x288" range="590-1299" />
+            <Limit name="measured-frame-rate-176x144" range="300-659" />
+            <Limit name="measured-frame-rate-352x288" range="565-1243" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.avc.decoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="833-1833" />
-            <Limit name="measured-frame-rate-720x480" range="103-227" />
-            <Limit name="measured-frame-rate-1280x720" range="102-224" />
-            <Limit name="measured-frame-rate-1920x1080" range="61-134" />
+            <Limit name="measured-frame-rate-320x240" range="260-572" />
+            <!-- modify for LI9OS151-281 by yuan.tan1 20250529 -->
+            <Limit name="measured-frame-rate-720x480" range="341-750" />
+            <Limit name="measured-frame-rate-1280x720" range="224-492" />
+            <Limit name="measured-frame-rate-1920x1080" range="111-245" />
+            <!-- modify for LI9OS151-281 by yuan.tan1 20250529 -->
         </MediaCodec>
          <MediaCodec name="c2.mtk.hevc.decoder" type="video/hevc" update="true">
-            <Limit name="measured-frame-rate-352x288" range="812-1786" />
+            <Limit name="measured-frame-rate-352x288" range="256-564" />
             <Limit name="measured-frame-rate-640x360" range="431-949" />
             <Limit name="measured-frame-rate-720x480" range="351-772" />
             <Limit name="measured-frame-rate-1280x720" range="206-454" />
-            <Limit name="measured-frame-rate-1920x1080" range="74-162" />
+            <Limit name="measured-frame-rate-1920x1080" range="165-362" />
         </MediaCodec>
         <MediaCodec name="c2.mtk.vpx.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="464-1021" />
+            <Limit name="measured-frame-rate-320x180" range="335-737" />
             <Limit name="measured-frame-rate-640x360" range="210-461" />
             <Limit name="measured-frame-rate-1280x720" range="56-123" />
             <Limit name="measured-frame-rate-1920x1080" range="23-51" />
@@ -163,16 +169,16 @@ Only the three quirks included above are recognized at this point:
             <Limit name="measured-frame-rate-352x288" range="251-552" />
         </MediaCodec>
         <MediaCodec name="c2.android.avc.decoder" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="110-243" />
-            <Limit name="measured-frame-rate-720x480" range="31-68" />
-            <Limit name="measured-frame-rate-1280x720" range="21-47" />
-            <Limit name="measured-frame-rate-1920x1080" range="10-23" />
+            <Limit name="measured-frame-rate-320x240" range="427-941" />
+            <Limit name="measured-frame-rate-720x480" range="177-391" />
+            <Limit name="measured-frame-rate-1280x720" range="75-165" />
+            <Limit name="measured-frame-rate-1920x1080" range="35-77" />
         </MediaCodec>
         <MediaCodec name="c2.android.hevc.decoder" type="video/hevc" update="true">
-            <Limit name="measured-frame-rate-352x288" range="114-250" />
-            <Limit name="measured-frame-rate-640x360" range="59-129" />
-            <Limit name="measured-frame-rate-720x480" range="57-125" />
-            <Limit name="measured-frame-rate-1280x720" range="21-46" />
+            <Limit name="measured-frame-rate-352x288" range="391-861" />
+            <Limit name="measured-frame-rate-640x360" range="229-503" />
+            <Limit name="measured-frame-rate-720x480" range="214-471" />
+            <Limit name="measured-frame-rate-1280x720" range="85-188" />
         </MediaCodec>
         <MediaCodec name="c2.android.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
             <Limit name="measured-frame-rate-320x180" range="355-780" />
@@ -186,5 +192,17 @@ Only the three quirks included above are recognized at this point:
             <Limit name="measured-frame-rate-1280x720" range="52-115" />
             <Limit name="measured-frame-rate-1920x1080" range="29-64" />
         </MediaCodec>
+        <MediaCodec name="c2.android.av1.decoder" type="video/av01" update="true">
+            <Limit name="measured-frame-rate-352x288" range="97-213" />
+            <Limit name="measured-frame-rate-640x360" range="46-102" />
+            <Limit name="measured-frame-rate-720x480" range="30-66" />
+            <Limit name="measured-frame-rate-1280x720" range="17-38" />
+        </MediaCodec>
+        <MediaCodec name="c2.android.av1-dav1d.decoder" type="video/av01" update="true">
+            <Limit name="measured-frame-rate-352x288" range="284-625" />
+            <Limit name="measured-frame-rate-640x360" range="275-605" />
+            <Limit name="measured-frame-rate-720x480" range="261-575" />
+            <Limit name="measured-frame-rate-1280x720" range="198-436" />
+       </MediaCodec>
     </Decoders>
 </MediaCodecs>

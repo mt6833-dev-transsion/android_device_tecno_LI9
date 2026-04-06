@@ -5,6 +5,9 @@
     <Decoders>
         <Video name="color.converter"
                alwaysColorConvertChecker="true" />
+        <Video name="cpu.boost.mode"
+              cluster="0"
+              minFrequency="730000" />
         <Video name="c2.mtk.mpeg4.decoder"
                type="video/mp4v-es"
                driverIntf="v4l2"
@@ -20,7 +23,7 @@
         <Video name="c2.mtk.avc.decoder"
                type="video/avc"
                driverIntf="v4l2"
-               maxConcurrentInstances="8"
+               maxConcurrentInstances="32"
                metaBufferSize="4096" />
         <Video name="c2.mtk.avc.decoder.secure"
                type="video/avc"
@@ -34,7 +37,7 @@
         <Video name="c2.mtk.hevc.decoder.secure"
                type="video/hevc"
                driverIntf="v4l2"
-               maxConcurrentInstances="32"
+               maxConcurrentInstances="1"
                metaBufferSize="4096" />
         <Video name="c2.mtk.heif.decoder"
                type="image/vnd.android.heic"
@@ -51,7 +54,7 @@
         <Video name="c2.mtk.vp9.decoder.secure"
                type="video/x-vnd.on2.vp9"
                driverIntf="v4l2"
-               maxConcurrentInstances="32" />
+               maxConcurrentInstances="1" />
         <Video name="c2.mtk.mpeg2.decoder"
                type="video/mpeg2"
                driverIntf="v4l2"
@@ -60,40 +63,31 @@
                type="video/x-ms-wmv"
                driverIntf="v4l2"
                maxConcurrentInstances="32" />
-        <Video name="cpu.boost.thumbnail"
-               cluster="0,1"
-               minFrequency="2000000,2400000" />
     </Decoders>
     <Encoders>
-        <Video name="c2.mtk.h263.encoder"
-               type="video/3gpp"
-               driverIntf="v4l2"
-               maxConcurrentInstances="12"
-               canSwapWidthHeight="true" />
-        <Video name="c2.mtk.mpeg4.encoder"
-               type="video/mp4v-es"
-               driverIntf="v4l2"
-               maxConcurrentInstances="12"
-               canSwapWidthHeight="true" />
         <Video name="c2.mtk.avc.encoder"
                type="video/avc"
                driverIntf="v4l2"
                maxConcurrentInstances="10"
-               canSwapWidthHeight="true" />
+               canSwapWidthHeight="true"
+               reencodeSupported="false" />
         <Video name="c2.mtk.avc.encoder.secure"
                type="video/avc"
                driverIntf="v4l2"
-               maxConcurrentInstances="16"
-               canSwapWidthHeight="true" />
+               maxConcurrentInstances="10"
+               canSwapWidthHeight="true"
+               reencodeSupported="false" />
         <Video name="c2.mtk.hevc.encoder"
                type="video/hevc"
                driverIntf="v4l2"
-               maxConcurrentInstances="12"
-               canSwapWidthHeight="true" />
+               maxConcurrentInstances="10"
+               canSwapWidthHeight="true"
+               reencodeSupported="false" />
         <Video name="c2.mtk.heif.encoder"
                type="image/vnd.android.heic"
                driverIntf="v4l2"
                maxConcurrentInstances="2"
-               canSwapWidthHeight="true" />
+               canSwapWidthHeight="true"
+               reencodeSupported="false" />
     </Encoders>
 </MediaCodecs>
